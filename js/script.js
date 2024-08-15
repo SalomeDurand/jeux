@@ -1,35 +1,24 @@
-//document.addEventListener("DOMContentLoaded", function (){
-
-        // rejouer le jeu
-//const replay = document.getElementById("replay");
-//replay.addEventListener("click", restart);
-//        function restart (){}
-
-        
     // générer un nombre au hasard
     const randomNumber = Math.floor(Math.random() * 10)
 
-console.log(randomNumber)
-
     const success = document.getElementById("check")
     const replay = document.getElementById("replay")
+    const input = document.getElementById("numberUser")
+    const body = document.querySelector("body")
 
     // pour que le formulaire puisse être détecté après entrée
     const formUser = document.getElementById("formUser")
-    formUser.addEventListener("submit", function (event) {
-        event.preventDefault()
-        const input = document.getElementById("numberUser")
-
-        const body = document.querySelector("body")
+    formUser.addEventListener("submit", function (e) {
+        e.preventDefault()
 
     // jouer effets sonores
-        const audioError = document.getElementById("audioError");
-        const audioSuccess = document.getElementById("audioSuccess");
+        const audioError = document.getElementById("audioError")
+        const audioSuccess = document.getElementById("audioSuccess")
         function playAudioError() { 
             audioError.play(); 
             }
         function playAudioSuccess() { 
-            audioSuccess.play(); 
+            audioSuccess.play() 
             }
 
         // détecter la valeur du formulaire    
@@ -49,9 +38,12 @@ console.log(randomNumber)
         else {
             input.remove()
             playAudioSuccess()
-            success.style.display = "block";
+            success.style.display = "block"
             success.classList.add("animate__animated", "animate__heartBeat")
-            replay.style.display = "block";
+            replay.style.display = "block"
             body.classList.remove("error")
-        }
-    })
+            replay.addEventListener("click", () => {
+                location.reload()
+                })
+        }        
+})
