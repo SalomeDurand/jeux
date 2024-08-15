@@ -3,8 +3,15 @@
 
     const success = document.getElementById("check")
     const replay = document.getElementById("replay")
+    const start = document.getElementById("start")
     const input = document.getElementById("numberUser")
     const body = document.querySelector("body")
+
+    // fonction start
+    start.addEventListener("click", () => {
+        start.style.display = "none"
+        input.style.display = "block"
+        })
 
     // pour que le formulaire puisse être détecté après entrée
     const formUser = document.getElementById("formUser")
@@ -45,5 +52,6 @@
             replay.addEventListener("click", () => {
                 location.reload()
                 })
-        }        
+        }    
 })
+
