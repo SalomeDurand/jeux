@@ -12,17 +12,25 @@
     </head>
     <body>
     
+        <div id="message"></div>
+
 <!-- mon formulaire -->
-        <form id="formUser">
-            <i id="check" class="fa-regular fa-circle-check"></i>
-            <input type="text" name="numberUser" id="numberUser" placeholder="?">
+        <div>
+            <form id="formUser">
+                <i id="check" class="fa-regular fa-circle-check"></i>
+                <input type="text" name="numberUser" id="numberUser" placeholder="?">
+            </form> 
+        </div>
+
+        <form id="name">
+            <input type="text" id="nameInput" placeholder="Enter your pseudo">
+        </form>
 
 <!-- mes sons -->
-            <audio src="sons/windows-error-sound-effect-35894.mp3" id="audioError"></audio>
-            <audio src="sons/new-notification-7-210334.mp3" id="audioSuccess"></audio>
-        </form> 
+<audio src="sons/windows-error-sound-effect-35894.mp3" id="audioError"></audio>
+<audio src="sons/new-notification-7-210334.mp3" id="audioSuccess"></audio>
 
-        <!-- Bouton start et replay -->
+<!-- Bouton start et replay -->
         <button name="start" id="start">Start</button>
         <button name="replay" id="replay">Replay</button>
 

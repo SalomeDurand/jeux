@@ -6,12 +6,21 @@
     const start = document.getElementById("start")
     const input = document.getElementById("numberUser")
     const body = document.querySelector("body")
+    const enterName = document.getElementById("nameInput")
+    const message = document.getElementById("message")
 
     // fonction start
     start.addEventListener("click", () => {
         start.style.display = "none"
+        enterName.style.display = "block"
+    })
+
+    // champ "enter your pseudo"
+    document.getElementById("name").addEventListener("submit", function (e) {
+        e.preventDefault()
+        enterName.style.display = "none"
         input.style.display = "block"
-        })
+    })
 
     // pour que le formulaire puisse être détecté après entrée
     const formUser = document.getElementById("formUser")
@@ -40,6 +49,8 @@
             }, 1000)
             playAudioError()
             body.classList.add("error") // changer la couleur de l'élément lorsque l'utilisateur a faux
+            message.style.display="block"
+            message.innerText = `Try again ${enterName.value} !`
         }
         // faire disparaître l'input et appraître l'icône succès avec animation + replay
         else {
@@ -52,6 +63,7 @@
             replay.addEventListener("click", () => {
                 location.reload()
                 })
+            message.style.display="block"
+            message.innerText = `Good job ${enterName.value} !`
         }    
 })
-
