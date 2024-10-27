@@ -19,7 +19,7 @@
     document.getElementById("name").addEventListener("submit", function (e) {
         e.preventDefault()
         enterName.style.display = "none"
-        input.style.display = "block"
+        input.style.display = "flex"
     })
 
     // pour que le formulaire puisse être détecté après entrée

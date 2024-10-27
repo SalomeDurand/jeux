@@ -1,23 +1,31 @@
 body{
     background-color: #1abc9c;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     align-items: center;
     height: 100vh;
     overflow: hidden;
 }
 
+form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    grid-row-start: 2;
+    grid-column-start: 2;
+}
+
 #numberUser{
-    font-size: 10em;
+    font-size: 150px;
     text-align: center;
     width: 200px;
     border: none;
     background-color: rgba(245, 228, 118, 0.9);
-    outline: none;
     color: #9b59b6;
     border-radius: 10px;
     padding: 20px;
-    display:none;
+    display: none;
 }
 
 .error {
@@ -25,7 +33,7 @@ body{
 }
 
 .fa-circle-check{
-    font-size: 10em;
+    font-size: 6em;
     color: rgba(245, 228, 118, 0.9);
     display: none;
 }
@@ -34,21 +42,34 @@ button {
     font-size: 4em;
     color:#9b59b6;
     border-radius: 10px;
-    padding: 15px;
-    outline: none;
+    padding: 20px;
     text-align: center;
     background-color: rgba(245, 228, 118, 0.9);
     display:none;
+    justify-self: center;
+    border:none;
 }
 
 #start {
     display:block;
+    grid-column-start: 2;
+    grid-row-start:2;
+}
+
+#start:hover{
+    background-color: #9b59b6;
+    color: rgba(245, 228, 118, 0.9);
 }
 
 #replay {
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    grid-column-start: 2;
+    grid-row-start: 3;
+    align-self: baseline;
+}
+
+#replay:hover{
+    background-color: #9b59b6;
+    color: rgba(245, 228, 118, 0.9);
 }
 
 #nameInput {
@@ -57,11 +78,10 @@ button {
     width: 500px;
     border: none;
     background-color: rgba(245, 228, 118, 0.9);
-    outline: none;
-    color: #9b59b6;
     border-radius: 10px;
     padding: 15px;
     display: none;
+    color:#9b59b6;
 }
 
 #message {
@@ -70,4 +90,6 @@ button {
     color: rgba(245, 228, 118, 0.9);
     padding: 20px;
     display:none;
+    margin: 10px;
+    flex: 1 1 100%;
 }
